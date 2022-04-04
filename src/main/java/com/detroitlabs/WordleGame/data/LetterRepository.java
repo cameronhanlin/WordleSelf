@@ -15,6 +15,7 @@ public class LetterRepository { //generate word
     ArrayList<CharacterBank> characterBanks = new ArrayList<>();
     ArrayList<ArrayList<CharacterBank>> priorGuesses = new ArrayList<>();
     String theWord;
+    String lastWord;
 
     public static int guessCount;
 
@@ -30,7 +31,8 @@ public class LetterRepository { //generate word
         guessCount = 0;
         do {
             theWord = wordGeneratorService.getWord()[0];
-        } while (theWord.length() > 5);
+        } while (theWord.length() > 6);
+        System.out.println(theWord);
         characterBanks = stringToCharBankList(theWord);
 
     }
@@ -57,6 +59,7 @@ public class LetterRepository { //generate word
     public void recordGuess(String newGuess) {
         ArrayList<CharacterBank> tempBank = new ArrayList<>();
         String coloredChars = "";
+        lastWord = newGuess;
 
 
         for (int i = 0; i < newGuess.length(); i++) {
@@ -105,5 +108,25 @@ public class LetterRepository { //generate word
         } else {
             return false;
         }
+    }
+
+    public String getAHint(){
+        int place = 0;
+        String character = " ";
+        ArrayList<CharacterBank> lastGuessCharBank = priorGuesses.get(priorGuesses.size()-1);
+
+        //TODO make sure no hints are made when the puzzle is already solved.
+        for(int i=0; i<lastGuessCharBank.size(); i++){
+            if(lastGuessCharBank.get(i).getColor().equals("#FFFFFF")){
+                place = i;
+                character = theWord.substring(i,i+1);
+                break;
+            }
+        }
+
+        //return character.concat(String.valueOf(place));
+        return character+place;
+
+
     }
 }

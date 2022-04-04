@@ -12,12 +12,47 @@
         <button class="right">Start new game</button><br><br>
     </a>
 
-<!--    to solve the puzzle-->
+<!--to get a hint-->
+    <div class="right">
+        <!--
+        <button TYPE="button" th:onclick="'alert(letter number '+${hintPlace}+' should be a '+${hintCharacter}+')'">Receive one hint</button>
+        th:onclick="'alert(letter number '+${hintPlace}+' should be a '+${hintCharacter}+')'"-->
+
+        <button onclick="myFunction()">Try getting a hint</button>
+
+        <script th:inline="javascript">
+
+            var message = /*[[${wholeHint}]]*/ 'default';
+            function myFunction() {
+                alert(message);
+            }
+        </script>
+
+        <!--
+        <script th:inline="javascript">
+            /*<![CDATA[*/
+
+
+            console.log(message);
+
+            /*]]>*/
+        </script>
+        -->
+
+
+        <!--<button type="button" onclick="alert('test alert')">Receive a Hint</button>-->
+
+
+    </div>
+
+
+    <!--    to solve the puzzle-->
     <div class="right">
         <form action="page2" method="get">
             <input type="submit" value="Solve Puzzle" name="keyword">
         </form>
     </div>
+    <br>
 </div>
 <!--for the user to input their guess-->
 <form action="page2" method="get">

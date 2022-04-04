@@ -46,6 +46,19 @@ public class WordController {
         secondGuessMade = true;
         letterRepository.recordGuess(keyword);
         LetterRepository.guessCount++; //LOOK AT OUR PUBLIC STATIC NUMBER!!!
+
+        //TODO build in model map for hint here
+        String hint = letterRepository.getAHint();
+        int place = Integer.parseInt(hint.substring(1))+1;
+        hint = hint.substring(0,1);
+        if(hint.equals(" ")){
+            modelMap.put("wholeHint", "You've already solved the puzzle, why do you need a hint?");
+        } else {
+            modelMap.put("wholeHint", "Letter number "+place+" is a '"+hint+"'");
+        }
+
+
+
         modelMap.put("guessCount", LetterRepository.guessCount);
         modelMap.put("userGuess", keyword);
         modelMap.put("CharBank", letterRepository.getCharacterBanks());
