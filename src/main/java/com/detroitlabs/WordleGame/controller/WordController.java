@@ -57,8 +57,6 @@ public class WordController {
             modelMap.put("wholeHint", "Letter number "+place+" is a '"+hint+"'");
         }
 
-
-
         modelMap.put("guessCount", LetterRepository.guessCount);
         modelMap.put("userGuess", keyword);
         modelMap.put("CharBank", letterRepository.getCharacterBanks());
