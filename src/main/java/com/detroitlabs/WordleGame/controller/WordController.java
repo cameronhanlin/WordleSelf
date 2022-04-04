@@ -65,4 +65,6 @@ public class WordController {
         modelMap.put("wordLength", letterRepository.getCharacterBanks().size());
         return "errorMismatchPage2";
     }
+
+    //NEW COMMENT!
 }
