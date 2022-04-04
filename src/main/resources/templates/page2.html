@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/app.css}" />
+    <title>C&C Wordle</title>
+</head>
+<body>
+<div>
+<!--to start a new game-->
+    <a class="box" href="/">
+        <button class="right">Start new game</button><br><br>
+    </a>
+
+<!--    to solve the puzzle-->
+    <div class="right">
+        <form action="page2" method="get">
+            <input type="submit" value="Solve Puzzle" name="keyword">
+        </form>
+    </div>
+</div>
+<!--for the user to input their guess-->
+<form action="page2" method="get">
+    <label for="fname">Please Guess the Word:</label>
+    <input type="keyword" id="fname" name="keyword"><br><br>
+    <input type="submit" value="Submit">
+</form>
+<br>
+<!--counts the number of guesses made-->
+<div class="box" th:text="'Guesses made: '+${guessCount}+'&nbsp&nbsp&nbsp'"></div>
+
+<!--houses our guessing logic and color-->
+<div th:each="onePriorGuess : ${PriorGuesses}">
+    <div class="flex-container">
+        <div th:each="currentCharacter : ${onePriorGuess}">
+
+            <!--            to fill the boxes with the characters of the word-->
+            <!--<div th:background-color="${currentCharacter.color}" th:text="${currentCharacter.character}"></div>-->
+
+            <div th:style="'background-color:'+${currentCharacter.color}" th:text="'&nbsp'+${currentCharacter.character}"></div>
+
+        </div>
+    </div>
+</div>
+
+<div th:hidden="${!winCheck}">Congrats you won!</div>
+
+</body>
+</html>

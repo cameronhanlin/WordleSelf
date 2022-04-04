@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/app.css}"/>
+    <title>Error Handler</title>
+</head>
+<body style="text-align: center">
+<h1>ERROR</h1>
+<h2>Your Guess isn't the right length!</h2>
+
+<!--TODO find a more relatable image-->
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2CVdxOniu4XACY_IMn332rdGYLIZi4wYXlw&usqp=CAU" alt="sad face"><br>
+
+<form action="page2" method="get" >
+    <label for="fname" th:text="'Please guess a '+${wordLength}+' letter word: '"></label>
+    <input type="keyword" id="fname" name="keyword"><br><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,7 @@
+“12:21:55.889 [Test worker] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://random-word-api.herokuapp.com/word?number=1&swear=0
+}12:21:55.897 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+_12:21:56.199 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+o12:21:56.202 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.lang.String[]]
+
+satrapies
+Count of letter 1

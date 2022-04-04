@@ -1,0 +1,32 @@
+body{
+    background-color: darkgray;
+}
+
+.flex-container {
+    display: flex;
+    background-color: DodgerBlue;
+    padding: 5px;
+}
+
+.flex-container > div {
+    background-color: #FFFFFF;
+    margin: 5px;
+    padding: 0px;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+
+}
+
+.box{
+    text-align: right;
+}
+
+.center{
+    text-align: center;
+}
+.right{
+    float:right;
+}
+
+

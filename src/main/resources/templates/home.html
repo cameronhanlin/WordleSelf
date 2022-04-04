@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/app.css}"/>
+    <title>Welcome to C&C Wordle</title>
+</head>
+<body>
+
+<!--landing header -->
+<h1 class="center">Welcome to C&C's version of WORDLE</h1>
+<h3 class="center">Please enter your first guess below to start the game.</h3>
+<br>
+<br>
+<!--where user starts the game-->
+<form action="page2" method="get">
+    <label for="fname" th:text="'Please guess a '+${wordLength}+' letter word: '"></label>
+    <input type="keyword" id="fname" name="keyword"><br><br>
+    <input type="submit" value="Submit">
+</form>
+<div class="row">
+
+<!--houses our guessing logic and color-->
+    <div class="flex-container">
+        <div th:each="currentCharBank : ${CharBank}">
+<!--            to fill the boxes with the characters of the word-->
+            <div th:style="'background-color:'+${currentCharBank.color}" text="&nbsp&nbsp&nbsp&nbsp&nbsp"></div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+</body>
+</html>

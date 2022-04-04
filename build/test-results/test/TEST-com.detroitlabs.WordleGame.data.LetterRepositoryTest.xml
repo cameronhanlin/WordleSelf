@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.detroitlabs.WordleGame.data.LetterRepositoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-03-31T16:21:55" hostname="Collins-MBP.attlocal.net" time="0.608">
+  <properties/>
+  <testcase name="countOfCharShouldBe1()" classname="com.detroitlabs.WordleGame.data.LetterRepositoryTest" time="0.608"/>
+  <system-out><![CDATA[12:21:55.889 [Test worker] DEBUG org.springframework.web.client.RestTemplate - HTTP GET http://random-word-api.herokuapp.com/word?number=1&swear=0
+12:21:55.897 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Accept=[application/json, application/*+json]
+12:21:56.199 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Response 200 OK
+12:21:56.202 [Test worker] DEBUG org.springframework.web.client.RestTemplate - Reading to [java.lang.String[]]
+satrapies
+Count of letter 1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
